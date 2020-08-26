@@ -20,7 +20,7 @@ module.exports = {
 		{
 			resolve: `gatsby-source-wordpress-experimental`,
 			options: {
-				url: process.env.WPGRAPHQL_URL || `http://niko1.sgedu.site/graphql`,
+				url: process.env.WPGRAPHQL_URL || `http://wpgatsby.local/graphql`,
 				verbose: true,
 				develop: {
 					hardCacheMediaFiles: true,
@@ -34,9 +34,7 @@ module.exports = {
 					Post: {
 						limit:
 
-								process.env.NODE_ENV ===
-								`development` ? // Lets just pull 50 posts in development to make it easy on ourselves.
-								50 :
+								process.env.NODE_ENV === `development` ? 50 : // Lets just pull 50 posts in development to make it easy on ourselves.
 								// and we don't actually need more than 5000 in production for this particular site
 								5000,
 					},
